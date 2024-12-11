@@ -1,0 +1,165 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('back.png') no-repeat center center / cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Container */
+.auth-container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Form Toggle */
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.form-toggle button.active {
+    background: rgb(92, 222, 92);
+    border-color: #a7ffa8;
+}
+
+/* Sliding Wrapper */
+.slider-wrapper {
+    display: flex;
+    width: 200%; /* Twice the width to fit both forms */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Forms */
+.auth-form {
+    width: 50%; /* Half of the slider wrapper width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.auth-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #00BFFF;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #227422;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #999797;
+}
+
+.google-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    z-index: 10; /* Ensure the button is visible */
+}
+
+
+.google-signin:hover {
+    background-color: #b9b9b9; /* Slightly darker blue on hover */
+}
+
+.google-logo {
+    width: 20px;  /* Set the width to ensure it's visible */
+    height: auto; /* Keep aspect ratio */
+    margin-right: 10px; /* Add space between image and text */
+}
+
+
+/* Form Footer Links */
+.form-footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.form-footer a {
+    color: rgb(0, 255, 0);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+    color: #999797;
+}

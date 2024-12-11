@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Musicofile - Play Latest Music, Podcast, and MusicoStudio Special
+    </title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="Simple_Aesthetic_Elegant_Minimalist_Logo__1_-removebg-preview.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Stalinist+One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Suez+One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="#musicCarousel">
+          <img
+            class="image"
+            src="Screenshot_2024-11-22_201934-removebg.png"
+            alt="Logo"
+          />
+        </a>
+      </div>
+      <nav class="nav-items">
+        <ul>
+          <li><a href="#musicCarousel">Home</a></li>
+          <li><a href="#album">Albums</a></li>
+          <li><a href="#musicostudio">MusicoStudio</a></li>
+          <li><a href="#podcast">Podcast</a></li>
+        </ul>
+        <button class="btn"><a href="login.html">Login</a></button>
+        <button id="darkModeToggle" class="dark-mode-toggle">
+          <span id="toggle-icon">🌙</span> <!-- Moon Icon -->
+      </button>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <img class="bar" src="pngwing.com (3).png" alt="close" />
+      </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="close-btn" id="closeMenu">
+        <img id="close" src="close.png" alt="close" />
+      </div>
+      <ul>
+        <li><a href="#musicCarousel">Home</a></li>
+        <li><a href="#album">Albums</a></li>
+        <li><a href="#musicostudio">MusicoStudio</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+      </ul>
+      <button class="btn"><a href="login.html">Login</a></button>
+    </div>
+
+    <!-- Carousel Section -->
+    <div id="musicCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#musicCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#musicCarousel" data-slide-to="1"></li>
+        <li data-target="#musicCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="morni">
+            <img
+              src="Zrt77f7nTqY-HD.jpg"
+              class="d-block w-100 carousel-image"
+              alt="First slide"
+              loading="eager"
+            />
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <div class="crousel-cap">
+              <h5>Latest Album by BADSHAH</h5>
+              <button  class="song-card crousel-btn" 
+              data-song="songs/morni.mp3" 
+              data-thumbnail="morni.jpg" 
+              data-title="Morni" 
+              data-artist="Baadshah">Listen Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="payal">
+            <img
+              src="Screenshot 2024-11-25 223922.png"
+              class="d-block w-100 carousel-image"
+              alt="Second slide"
+              loading="eager"
+            />
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <div class="crousel-cap">
+              <h5>Honey X Paradox</h5>
+              <button  class="song-card crousel-btn" 
+            data-song="songs/song2.mp3" 
+            data-thumbnail="ab67616d0000b273aad3f4b601ae8763b3fc4e88.jpeg" 
+            data-title="Payal" 
+            data-artist="Honey X Paradox">Listen Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="bhojpuri">
+            <img
+              src="njFBXNQoAYA-HD.jpg"
+              class="d-block w-100 carousel-image"
+              alt="Third slide"
+              loading="eager"
+            />
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <div class="crousel-cap">
+              <h5>Latest Bhojpuri Release</h5>
+            <button  class="song-card crousel-btn" 
+            data-song="songs/gulab.mp3" 
+            data-thumbnail="gulab.jpeg" 
+            data-title="Gulab" 
+            data-artist="Neelkamal Singh">Listen Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#musicCarousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#musicCarousel"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <section class="home" id="home">
+      <div class="parent-home">
+        <div class="home-header">
+          <p id="recent">Songs Made For You</p>
+        </div>
+        <div class="songs">
+          <div class="card-song">
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song1.mp3" 
+            data-thumbnail="sidhu-moose-wala-face-hd-pic-11654141032tejqubqjxi.jpg" 
+            data-title="Same Beef" 
+            data-artist="Sidhu X Bohemia">
+              <img
+                id="sidhu"
+                src="sidhu-moose-wala-face-hd-pic-11654141032tejqubqjxi.jpg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Same Beef</p>
+              <p class="artist-name">Sidhu X Bohemia</p>
+            </div>
+            </div>
+            <div class="song2 card-back hover effect opacity song-card"
+            data-song="songs/song2.mp3" 
+            data-thumbnail="ab67616d0000b273aad3f4b601ae8763b3fc4e88.jpeg" 
+            data-title="Payal" 
+            data-artist="Honey X Paradox">
+              <img
+                id="honey"
+                src="ab67616d0000b273aad3f4b601ae8763b3fc4e88.jpeg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Payal</p>
+              <p class="artist-name">Honey X Paradox</p>
+            </div>
+            </div>
+            <div
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song3.mp3" 
+            data-thumbnail="MV5BNWFhNjhjNWEtMTEwOS00OTYwLWJmNTQtZGRhZGQ1NmNhZDBmXkEyXkFqcGdeQXVyNDQ4NTg1Njc@._V1_FMjpg_UX1000_.jpg" 
+            data-title="Sajna, Say Yes" 
+            data-artist="Badshah X Payal Dev">
+              <img
+                id="sidhu"
+                src="MV5BNWFhNjhjNWEtMTEwOS00OTYwLWJmNTQtZGRhZGQ1NmNhZDBmXkEyXkFqcGdeQXVyNDQ4NTg1Njc@._V1_FMjpg_UX1000_.jpg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Sajna, Say Yes</p>
+              <p class="artist-name">Badshah X Payal Dev</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song4.mp3" 
+            data-thumbnail="Ghana-Kasoota-Hindi-2021-20211110172537-500x500.jpg" 
+            data-title="Ghana Kasoota" 
+            data-artist="Raftaar">
+              <img
+                id="sidhu"
+                src="Ghana-Kasoota-Hindi-2021-20211110172537-500x500.jpg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Ghana Kasoota</p>
+              <p class="artist-name">Raftaar</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song5.mp3" 
+            data-thumbnail="OIP.jpeg" 
+            data-title="Na Na Na Na" 
+            data-artist="J Star">            
+            <img id="sidhu" src="OIP.jpeg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Na Na Na Na</p>
+              <p class="artist-name">J Star</p>
+            </div>
+            </div>
+             <!----------------------------------------------------------------->
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song6.mp3" 
+            data-thumbnail="OIP (1).jpeg" 
+            data-title="Machayenge 4" 
+            data-artist="Kr$na"> 
+              <img
+                id="sidhu"
+                src="OIP (1).jpeg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Machayenge 4</p>
+              <p class="artist-name">Kr$na</p>
+              </div>
+            </div>
+            <div
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song7.mp3" 
+            data-thumbnail="213ad603d4ebef6dfb79653e787f4723.1000x1000x1.jpg" 
+            data-title="Machayenge 4" 
+            data-artist="Emiway Bantai"> 
+              <img
+                id="honey"
+                src="213ad603d4ebef6dfb79653e787f4723.1000x1000x1.jpg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Machayenge 4</p>
+              <p class="artist-name">Emiway Bantai</p>
+            </div>
+            </div>
+            <div
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song8.mp3" 
+            data-thumbnail="1200x1200bf-60.jpg" 
+            data-title="Luka Chippi" 
+            data-artist="Seedhe Maut"> 
+              <img
+                id="sidhu"
+                src="1200x1200bf-60.jpg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Luka Chippi</p>
+              <p class="artist-name">Seedhe Maut</p>
+            </div>
+            </div>
+            <div
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song9.mp3" 
+            data-thumbnail="62f9fda79301e83c0922fe3aa3e375b9.1000x1000x1.jpg" 
+            data-title="Baazigar" 
+            data-artist="Divine"> 
+              <img
+                id="sidhu"
+                src="62f9fda79301e83c0922fe3aa3e375b9.1000x1000x1.jpg"
+                alt="artist"
+                loading="lazy"
+              />
+              <div class="creator">
+              <p class="name">Baazigar</p>
+              <p class="artist-name">Divine</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song10.mp3" 
+            data-thumbnail="x720.jpeg" 
+            data-title="Basti Ka Hasti" 
+            data-artist="Mc Stan">
+            <img id="sidhu" src="x720.jpeg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Basti Ka Hasti</p>
+              <p class="artist-name">Mc Stan</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song30.mp3" 
+            data-thumbnail="level.jpg" 
+            data-title="Levels" 
+            data-artist="Sidhu Moose Wala">
+            <img id="sidhu" src="level.jpg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Levels</p>
+              <p class="artist-name">Sidhu Moose Wala</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song31.mp3" 
+            data-thumbnail="hola.jpg" 
+            data-title="Hola Amigo" 
+            data-artist="KR$NA ft. Sidhe Maut">
+            <img id="sidhu" src="hola.jpg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Hola Amigo</p>
+              <p class="artist-name">KR$NA ft. Sidhe Maut</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song32.mp3" 
+            data-thumbnail="company.jpg" 
+            data-title="Company" 
+            data-artist="Emiway Bantai">
+            <img id="sidhu" src="company.jpg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Company</p>
+              <p class="artist-name">Emiway Bantai</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/song33.mp3" 
+            data-thumbnail="khes.jpg" 
+            data-title="Saj Ke Sawar Ke" 
+            data-artist="Kheshari Lal Yadav">
+            <img id="sidhu" src="khes.jpg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Saj Ke Sawar Ke</p>
+              <p class="artist-name">Kheshari Lal</p>
+            </div>
+            </div>
+            <div 
+            class="song1 card-back hover effect opacity song-card" 
+            data-song="songs/Daku.mp3" 
+            data-thumbnail="Daku-1.jpg" 
+            data-title="Daku" 
+            data-artist="Inderpal Moga">
+            <img id="sidhu" src="Daku-1.jpg" alt="artist" loading="lazy" />
+              <div class="creator">
+              <p class="name">Daku</p>
+              <p class="artist-name">Inderpal Moga</p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!--------------ALBUM SECTION------------------------------>
+
+        <section id="album">
+        <div class="home-header">
+          <p id="recent">Albums Newly Launched</p>
+        </div>
+        <div class="hero card-song">
+        <div class="album1 card-back hover effect opacity song-card" 
+          data-song="songs/morni.mp3" 
+          data-thumbnail="morni.jpg" 
+          data-title="Morni" 
+          data-artist="Baadsah">
+          <img id="sidhu" src="morni.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Morni</p>
+          <p class="artist-name">Baadsah</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/295.mp3" 
+        data-thumbnail="moosetape.jpeg" 
+        data-title="295" 
+        data-artist="Sidhu Moosewala">
+          <img id="sidhu" src="moosetape.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">295</p>
+          <p class="artist-name">Sidhu Moosewala</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/Millionaire.mp3" 
+        data-thumbnail="ab67616d0000b273aad3f4b601ae8763b3fc4e88.jpeg" 
+        data-title="Millionaire" 
+        data-artist="Yo Yo Honey Singh">
+          <img id="sidhu" src="ab67616d0000b273aad3f4b601ae8763b3fc4e88.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Glory</p>
+          <p class="artist-name">Yo Yo Honey Singh</p>
+        </div>
+        </div>
+        <div
+        class="song1 card-back hover effect opacity song-card" 
+        data-song="songs/bikni.mp3" 
+        data-thumbnail="puravjha.jpg" 
+        data-title="Kamar Chikni" 
+        data-artist="Purav Jha"> 
+          <img id="sidhu" src="puravjha.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Kamar Chikni</p>
+          <p class="artist-name">Purav Jha</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song11.mp3" 
+        data-thumbnail="neelkamal.jpeg" 
+        data-title="Garmi Badhal Bate Kurti Me" 
+        data-artist="Neelkamal Singh">
+          <img id="sidhu" src="neelkamal.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Garmi Badhal</p>
+          <p class="artist-name">Neelkamal Singh</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song12.mp3" 
+        data-thumbnail="marad.jpg" 
+        data-title="Marad nahi Mataha Ke Darad" 
+        data-artist="Shiwani Singh">
+          <img id="sidhu" src="marad.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Matha Ke Darad</p>
+          <p class="artist-name">Shiwani Singh</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song13.mp3" 
+        data-thumbnail="lollipop.jpeg" 
+        data-title="Lollipop Lagelu" 
+        data-artist="Pawan Singh">
+          <img id="sidhu" src="lollipop.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Lollipop Lagelu</p>
+          <p class="artist-name">Pawan Singh</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song14.mp3" 
+        data-thumbnail="awdhesh.jpg" 
+        data-title="Tere Dono Indicator" 
+        data-artist="Awadhesh Premi">
+          <img id="sidhu" src="awdhesh.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Dono Indicator</p>
+          <p class="artist-name">Awadhesh Premi</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song15.mp3" 
+        data-thumbnail="neel2.jpg" 
+        data-title="Kamariya Dole Raja Ji" 
+        data-artist="Neelkamal Singh">
+          <img id="sidhu" src="neel2.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Kamariya Dole</p>
+          <p class="artist-name">Neelkamal Singh</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song16.mp3" 
+        data-thumbnail="nimbu-kharbuja-bhail-2-thumb.jpg" 
+        data-title="Nimbu Kharbuja Bhail" 
+        data-artist="Kheshari Lal Yadav">
+          <img id="sidhu" src="nimbu-kharbuja-bhail-2-thumb.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Nimbu Kharbuja</p>
+          <p class="artist-name">Kheshari Lal Yadav</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+     <!--------------MUSICOSTUDIO SECTION------------------------------>
+    <section id="musicostudio">
+      <div class="home-header">
+        <p id="recent">MusicoStudio</p>
+      </div>
+
+
+      <div class="hero card-song">
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song17.mp3" 
+        data-thumbnail="1200x1200bf-60.jpg" 
+        data-title="Khatta Flow" 
+        data-artist="Sidhe Maut ft. Kr$na">
+          <img id="sidhu" src="1200x1200bf-60.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Khatta Flow</p>
+          <p class="artist-name">Sidhe Maut X KR$NA</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song18.mp3" 
+        data-thumbnail="clan.jpg" 
+        data-title="WuShang Clan" 
+        data-artist="Dank X Foosie ft. Arpit Bala">
+          <img id="sidhu" src="clan.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">WuShang Clan</p>
+          <p class="artist-name">Dank X Foosie</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song19.mp3" 
+        data-thumbnail="kullar.jpg" 
+        data-title="HMM" 
+        data-artist="KhullarG">
+          <img id="sidhu" src="kullar.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">HMM</p>
+          <p class="artist-name">KhullarG</p>
+          </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/G O A T.mp3" 
+        data-thumbnail="goat.jpg" 
+        data-title="G.O.A.T" 
+        data-artist="Diljit Dosanjh">
+          <img id="sidhu" src="goat.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">G.O.A.T</p>
+          <p class="artist-name">Diljit Dosanjh</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song20.mp3" 
+        data-thumbnail="location.jpeg" 
+        data-title="Location Chalu kar" 
+        data-artist="Awadhesh Premi">
+          <img id="sidhu" src="location.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Location Chalu</p>
+          <p class="artist-name">Awadhesh Premi</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song21.mp3" 
+        data-thumbnail="devra.jpeg" 
+        data-title="Dewra Dhodi Chatna Ba" 
+        data-artist="Chandan Chanchal">
+          <img id="sidhu" src="devra.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Dhodi Chatna Ba</p>
+          <p class="artist-name">Chandan Chanchal</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/Kamla.mp3" 
+        data-thumbnail="crop_480x480_5637824.jpg" 
+        data-title="Khake Kamla Pasand Saiyan Mare Dana Dan" 
+        data-artist="Mithlesh Toofani">
+          <img id="sidhu" src="crop_480x480_5637824.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Kamla Pasand</p>
+          <p class="artist-name">Mithlesh Toofani</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song22.mp3" 
+        data-thumbnail="OIP (2).jpeg" 
+        data-title="Balam Pump Mare" 
+        data-artist="Awadhesh Premi">
+          <img id="sidhu" src="OIP (2).jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Balam Pump Mare</p>
+          <p class="artist-name">Awadhesh Premi</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song23.mp3" 
+        data-thumbnail="ab67616d0000b273e671aacbe4b29080ff92ed90.jpeg" 
+        data-title="Awa Mara Dan Dan" 
+        data-artist="Awadhesh Premi">
+          <div class="creator">
+          <img id="sidhu" src="ab67616d0000b273e671aacbe4b29080ff92ed90.jpeg" alt="artist" loading="lazy" />
+          <p class="name">Awa Mara Dan Dan</p>
+          <p class="artist-name">Awadhesh Premi</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song24.mp3" 
+        data-thumbnail="chhot.jpeg" 
+        data-title="Tohar Mot Hamar Chhot" 
+        data-artist="Ritesh Pandey">
+          <div class="creator">
+          <img id="sidhu" src="chhot.jpeg" alt="artist" loading="lazy" />
+          <p class="name">Tohar Mot</p>
+          <p class="artist-name">Ritesh Pandey</p>
+        </div>
+        </div>
+        <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song25.mp3" 
+        data-thumbnail="peni.jpg" 
+        data-title="Peni Me Chheni Satai Diyo Re" 
+        data-artist="Awadhesh Premi">
+          <div class="creator">
+          <img id="sidhu" src="peni.jpg" alt="artist" loading="lazy" />
+          <p class="name">Peni Me Chheni</p>
+          <p class="artist-name">Awadhesh Premi</p>
+        </div>
+      </div>
+      <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song26.mp3" 
+        data-thumbnail="download.jpeg" 
+        data-title="Lagake Mare Dam Hamro Balam" 
+        data-artist="Awadhesh Premi">
+          <div class="creator">
+          <img id="sidhu" src="download.jpeg" alt="artist" loading="lazy" />
+          <p class="name">Hamro Balam</p>
+          <p class="artist-name">Awadhesh Premi</p>
+        </div>
+      </div>
+      <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song27.mp3" 
+        data-thumbnail="generator.jpg" 
+        data-title="Chalu Kar Generator" 
+        data-artist="Sakal Balamua">
+          <div class="creator">
+          <img id="sidhu" src="generator.jpg" alt="artist" loading="lazy" />
+          <p class="name">Chalu Kar Generator</p>
+          <p class="artist-name">Sakal Balamua</p>
+        </div>
+      </div>
+      <div class="album1 card-back hover effect opacity song-card" 
+        data-song="songs/song28.mp3" 
+        data-thumbnail="size_m.jpg" 
+        data-title="500 Lungi Raat Bhar Dungi" 
+        data-artist="Pardeshi Piya Yadav & Neha Raj">
+          <div class="creator">
+          <img id="sidhu" src="size_m.jpg" alt="artist" loading="lazy" />
+          <p class="name">500 Lungi</p>
+          <p class="artist-name">Pardeshi Yadav & Neha Raj</p>
+        </div>
+      </div>
+      <div class="album1 card-back hover effect opacity song-card" 
+      data-song="songs/song29.mp3" 
+      data-thumbnail="download (1).jpeg" 
+      data-title="Din Pe Din Dunu Latke" 
+      data-artist="Awadhesh Premi Yadav">
+        <div class="creator">
+        <img id="sidhu" src="download (1).jpeg" alt="artist" loading="lazy" />
+        <p class="name">Dunu Latke</p>
+        <p class="artist-name">Awadhesh Premi</p>
+      </div>
+    </div>
+    </div>
+    </section>
+
+
+     <!--------------PODCAST SECTION------------------------------>
+
+    <section id="podcast">
+
+      <div class="home-header">
+        <p id="recent">Podcast</p>
+      </div>
+
+      <div class="hero card-song">
+
+        <div class="album1 card-back hover effect opacity song-card"
+        data-song="songs/pod.mp3" 
+        data-thumbnail="ab6765630000ba8aa35fd221a1116cd6dd1ddcc5.jpeg" 
+        data-title="BeerBicep - SINGHAM On TRS" 
+        data-artist="The Ranveer Show">
+          <img id="sidhu" src="ab6765630000ba8aa35fd221a1116cd6dd1ddcc5.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">BeerBicep</p>
+          <p class="artist-name">The Ranveer Show</p>
+        </div>
+        </div>
+
+        
+        <div class="album1 card-back hover effect opacity song-card"
+        data-song="songs/pod.mp3" 
+        data-thumbnail="pod2.jpeg" 
+        data-title="RealTalk - Dharmesh Sir On RT" 
+        data-artist="RealTalk Clips">
+          <img id="sidhu" src="pod2.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">RealTalk</p>
+          <p class="artist-name">RealTalk Podcast</p>
+        </div>
+        </div>
+        
+        <div class="album1 card-back hover effect opacity song-card"
+        data-song="songs/pod.mp3" 
+        data-thumbnail="mayank.jpeg" 
+        data-title="Mayank Gupta" 
+        data-artist="The Mayank Gupta Podcast">
+          <img id="sidhu" src="mayank.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Mayank Gupta</p>
+          <p class="artist-name">The Mayank Gupta</p>
+        </div>
+        </div>
+
+        <div class="album1 card-back hover effect opacity song-card"
+        data-song="songs/pod.mp3" 
+        data-thumbnail="now.jpeg" 
+        data-title="The Now Podcast" 
+        data-artist="Prakshal">
+          <img id="sidhu" src="now.jpeg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">The Now Podcast</p>
+          <p class="artist-name">Prakshal</p>
+        </div>
+        </div>
+
+        <div class="album1 card-back hover effect opacity song-card"
+        data-song="songs/pod.mp3" 
+        data-thumbnail="saurav.jpg" 
+        data-title="The Digital Talk Now" 
+        data-artist="Sorav Jain">
+          <img id="sidhu" src="saurav.jpg" alt="artist" loading="lazy" />
+          <div class="creator">
+          <p class="name">Sorav Jain</p>
+          <p class="artist-name">Digital Talk Now</p>
+        </div>
+        </div>
+
+      </div>
+    </section>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+          <div class="footer-section footer-branding">
+            <div class="logo">
+              <a href="#musicCarousel">
+                <img
+                  class="image"
+                  src="Screenshot_2024-11-22_201934-removebg.png"
+                  alt="Logo"
+                />
+              </a>
+            </div>
+              <p class="name">Speaker Faad Songs,</p>
+              <p class="artist-name">On Your Fingertips.</p>
+          </div>
+  
+          <div class="footer-section footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: <a href="mailto:sagarkshn8@gmail.com.com">sagarkshn8@gmail.com</a></p>
+              <p>Phone: <a href="tel:+1234567890">+91 88091 97377</a></p>
+              <p>Address: Govindpuri, Kalka ji, 110019</p>
+          </div>
+  
+          <div class="footer-section footer-social">
+              <h3>Let's Get Connected</h3>
+              <div class="social-icons">
+                  <a href="https://www.facebook.com/sagargupta.offi/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://x.com/offisagargupta" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/sagargupta.official/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/sagar-gupta-1b107a315/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
+  
+      <div class="footer-bottom">
+          <p class="artist-name copyright">&copy; 2024 MusicoFile. All rights reserved.</p>
+      </div>
+  </footer>
+
+  <div id="playbar">
+    <div class="playbar-left">
+      <img src="default-thumbnail.jpg" alt="Song Thumbnail" class="song-thumbnail">
+      <div class="song-details">
+        <p class="song-title">Song Title</p>
+        <p class="artist-name">Artist Name</p>
+      </div>
+    </div>
+    <div class="playbar-center">
+      <button class="control-btn" id="prev-btn"><i class="fas fa-backward"></i></button>
+      <button class="control-btn" id="play-pause-btn"><i class="fas fa-play"></i></button>
+      <button class="control-btn" id="next-btn"><i class="fas fa-forward"></i></button>
+      <div class="progress-container">
+        <span class="current-time">0:00</span>
+        <input type="range" class="progress-bar" min="0" max="100" value="0">
+        <span class="duration">0:00</span>
+      </div>
+    </div>
+    <div class="playbar-right">
+      <button class="control-btn"><i class="fas fa-volume-up"></i></button>
+      <input type="range" class="volume-bar" min="0" max="100" value="50">
+    </div>
+  </div>
+  <audio id="audio-player"></audio>
+  
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

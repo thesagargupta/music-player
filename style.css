@@ -1,0 +1,937 @@
+
+/* Base styles for light mode */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Header and Navigation sections */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;  /* Light mode background */
+    transition: background-color 0.3s ease;
+}
+
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Dark mode header and nav background */
+body.dark-mode .header {
+    background-color: #1e1e1e;  /* Dark mode background */
+}
+
+/* Section styling */
+section {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode for sections */
+body.dark-mode section {
+    background-color: #2c2c2c;  /* Dark mode section background */
+}
+
+/* Button styling */
+.btn, .dark-mode-toggle {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+}
+
+
+/* Dark mode button styles */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #606060;
+    color: black;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+}
+
+/* Change button style in dark mode */
+body.dark-mode .dark-mode-toggle {
+    background-color: #fff;
+    color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Makes sure the header is on top of other content */
+    background-color: white; /* Optional, for background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional, adds a shadow for effect */
+    padding: 10px 20px; /* Adjust padding as needed */
+  }
+body {
+    padding-top: 80px; /* Adjust based on your header's height */
+}  
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+nav a, .nav-items li, .mobile-menu a {
+    outline: none; /* Removes the blue focus outline */
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits color from parent, if you want no color change */
+}
+  
+  /* Optional: Add custom hover or active state styles */
+nav a:hover, .nav-items li:hover, .mobile-menu a:hover {
+    color: inherit; /* Set to any color you like */
+    text-decoration: none; /* Keeps it without underline on hover */
+}
+  
+  /* If you have an active state for links (for example when they're clicked) */
+nav a:active, .nav-items li:active, .mobile-menu a:active {
+    color: #333; /* Choose an active color */
+}
+nav a {
+    color: inherit; /* Set the link color to green */
+    transition: color 0.5s ease; /* Smooth transition for color change */
+}
+  
+.mobile-menu {
+    padding-top: 100px; /* Adjust based on your header's height */
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 20px;
+    background-color: #2c2c2c;
+    color: white;
+    font-family: 'Stalinist One', sans-serif; /* Applying desired font */
+}
+
+.logo img {
+    width: 100px;
+    height: 80px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-items ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+    list-style-type: none; /* Remove bullets */
+}
+
+.nav-items li {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: 'Montserrat', sans-serif; /* Applying Montserrat for nav links */
+}
+
+.nav-items li::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2.5px;
+    width: 0%;
+    background-color: rgb(129, 255, 100);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-items li:hover::after {
+    width: 100%;
+}
+
+.nav-items li:hover {
+    color: #f0f0f0;
+}
+
+/* Specific styles for the login button to override conflicts */
+.header .btn {
+    background-color: rgb(92, 222, 92) !important; /* Ensure the background color is green */
+    color: white !important; /* Ensure the text color is white */
+    border: none; /* Remove any border */
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for the button */
+.header .btn:hover {
+    background-color: rgb(85, 200, 85) !important; /* Slightly darker green */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+
+/* Mobile menu overlay */
+.mobile-menu {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0); /* Slide the menu in */
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.mobile-menu ul li {
+    font-size: 22px;
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu .btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: rgb(92, 222, 92);
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Close button in mobile menu */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Carousel Styles */
+.carousel-image {
+    max-height: 500px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the images scale properly */
+}
+
+.carousel-caption h5 {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+    font-size: 20px;
+    color: #ddd;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.morni img {
+    width: 100%;
+    height: auto;
+    object-position: 0 17%;
+    object-fit: cover;
+}
+
+.payal img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 0 10%;
+}
+
+.bhojpuri img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+}
+
+.crousel-cap {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/*home page*/
+
+.home{
+    width:100% ;
+    background-color: black;
+    height:100%; 
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.home-header{
+    width: 100%;
+    background-color: #121212;
+    color: #ddd;
+    font-family: 'Montserrat', sans-serif;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-top:15px ;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.parent-home{
+    width: 80%;
+    padding-top: 10px;
+}
+
+#recent{
+    font-size: 22px;
+    padding-left: 15px;
+}
+
+
+.home-header:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.1); /* Slightly enlarge the text on hover */
+}
+
+#closeMenu{
+    filter: invert(1);
+}
+
+#close{
+    height: 20px;
+    margin-top: -28px;
+}
+
+
+#sidhu{
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+}
+#honey{
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px; 
+}
+
+.card-song{
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+    padding: 15px;
+    justify-content: center;
+}
+
+.card-back{
+    background-color: #121212;
+}
+.hover{
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+.effect:hover{
+    transform: scale(1.05);  /* Slightly enlarge the card */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);  /* Add a shadow effect */
+}
+
+.opacity:hover img{
+    opacity: 0.8;
+}
+/* Base styles for play icon */
+.play-icon {
+    position: relative;
+    bottom: 78%;
+    left: 5%;
+    z-index: 10;
+    width: 36px;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 13px;
+}
+.name{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 0rem !important;
+}
+.artist-name{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    padding-bottom: 5px;
+}
+.creator {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center;   /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center;    /* Center the text content */         /* Optional height */
+}
+  
+/*Footer*/
+
+/* Define variables for light and dark modes */
+:root {
+    --footer-bg: #2c2c2c;   
+    --footer-text: #ffffff;     /* Light mode background */
+    --footer-text: #ffffff;        /* Light mode text */
+    --footer-border: #e0e0e0;   /* Light mode border */
+}
+
+body.dark-mode {
+    --footer-bg: #0000;       /* Dark mode background */
+    --footer-text: #ffffff;     /* Dark mode text */
+    --footer-border: #444;      /* Dark mode border */
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--footer-border);
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--footer-link);
+}
+
+.footer-section a {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--footer-link);
+    text-decoration: underline;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-links ul li a {
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.footer-social .social-icons a {
+    font-size: 1.5rem;
+}
+
+
+
+.footer-bottom {
+    margin-top: 0rem;
+    font-size: 0.8rem;
+    border-top: 1px solid var(--footer-border);
+    padding-top: 0rem;
+}
+
+.footer-social .social-icons a {
+    color: #fff; /* Default icon color */
+    font-size: 1.5rem;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-social .social-icons a:hover {
+    color: rgb(92, 222, 92); /* Change to your desired hover color */
+}
+
+.copyright{
+    margin-top: 25px;
+    margin-bottom: 0rem !important;
+}
+
+/* Playbar Styles */
+/* Carousel Button Styling */
+.crousel-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #3b3737; /* Red background */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    text-transform: uppercase; /* Capitalize text */
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 15px; /* Space above the button */
+  }
+  
+  /* Button Hover Effects */
+  
+  /* Button Focus Effects */
+  .crousel-btn:focus {
+    outline: none;
+  }
+  
+  /* Button Disabled State */
+  .crousel-btn:disabled {
+    cursor: not-allowed;
+  }
+  
+  /* Button active effect */
+  .crousel-btn:active {
+    transform: translateY(2px); /* Slight depression effect */
+  }
+  
+  /* Optional: Adding some space between carousel caption */
+  .carousel-caption .crousel-cap {
+    text-align: center;
+    padding: 20px;
+  }
+  
+#playbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #1c1c1c;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  flex-wrap: wrap; /* Allow wrapping of content on smaller screens */
+}
+
+body {
+    padding-bottom: 130px; /* Give space at the bottom for the footer + player */
+}
+
+/* Thumbnail and song details */
+.song-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+#audio-player audio {
+    width: 300px;
+  }
+.song-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title,
+.artist-name {
+  margin: 0;
+  font-size: 14px;
+}
+
+.playbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1 1 100%; /* Full width on mobile */
+  justify-content: flex-start;
+  margin-bottom: 10px; /* Space between the song details and controls */
+}
+
+/* Center section for controls */
+.playbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 100%; /* Center controls on mobile */
+  gap: 20px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect for the control buttons */
+
+/* Progress container */
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 150px; /* Progress bar size */
+  margin: 0 10px;
+  flex: 1;
+  background-color: #767676 !important;
+}
+
+.playbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 100%; /* Full width on mobile */
+}
+
+/* Volume slider */
+.volume-bar {
+  width: 80px; /* Smaller volume slider */
+  margin-left: 10px;
+  height: 4px; /* Adjust height for a compact look */
+  background-color: #767676 !important;
+}
+
+/* Volume icon button */
+.control-btn.volume {
+  font-size: 24px; /* Volume icon size */
+  margin-left: 10px;
+}
+
+/* Updated style for Previous/Next buttons */
+.control-btn.prev, .control-btn.next {
+  font-size: 28px; /* Larger size for better visibility */
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.control-btn.prev:hover, .control-btn.next:hover {
+  transform: scale(1.2); /* Larger hover effect for previous/next buttons */
+}
+
+/* Play/Pause button specific */
+.control-btn.play, .control-btn.pause {
+  font-size: 36px; /* Larger play/pause button */
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.control-btn.play:hover, .control-btn.pause:hover {
+  transform: scale(1.2); /* Larger hover effect for play/pause buttons */
+}
+
+/* Mobile Devices: */
+@media (max-width: 768px) {
+  #playbar {
+    padding: 10px 15px;
+  }
+
+  .song-thumbnail {
+    width: 40px;
+    height: 40px;
+  }
+
+  .song-details {
+    flex: 1 1 100%;
+  }
+
+  .song-title,
+  .artist-name {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .playbar-left {
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px; /* Adjust spacing between thumbnail and song details */
+  }
+
+  .playbar-center {
+    gap: 15px; /* Reduce space between buttons */
+    flex: 1 1 100%; /* Controls take full width */
+    flex-wrap: wrap; /* Wrap the controls on smaller screens */
+    justify-content: center;
+  }
+
+  .control-btn {
+    font-size: 22px; /* Smaller buttons for mobile */
+  }
+
+  .progress-bar {
+    width: 200px; /* Reduce width of the progress bar */
+  }
+
+  .volume-bar {
+    width: 80px; /* Smaller volume slider */
+  }
+
+  .control-btn.volume {
+    font-size: 20px; /* Smaller volume icon */
+  }
+
+  /* Previous/Next buttons */
+  .control-btn.prev, .control-btn.next {
+    font-size: 24px; /* Smaller previous/next buttons */
+    padding: 8px;
+  }
+
+  /* Play/Pause buttons */
+  .control-btn.play, .control-btn.pause {
+    font-size: 30px; /* Smaller play/pause button */
+    padding: 10px;
+  }
+
+  /* Ensure the whole playbar is responsive and compact */
+  .progress-container {
+    flex-direction: column; /* Stack progress bar and time labels vertically */
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Align icons and controls properly on mobile */
+  .playbar-right {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px; /* Space between volume icon and slider */
+    width: 100%;
+  }
+
+  /* Volume icon and slider */
+  .volume-bar {
+    width: 60px; /* Even smaller volume slider */
+  }
+}
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 768px) {
+    .nav-items {
+        display: none; /* Hide navigation by default on mobile */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu on small screens */
+    }
+
+    .hamburger .bar {
+        background-color: #fff;
+        height: 24px;
+        width: 100%;
+        margin: 4px 0;
+        transition: all 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .logo img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .nav-items li {
+        font-size: 18px;
+        text-align: center;
+        margin: 15px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .mobile-menu {
+        display: block;
+        padding: 40px 20px;
+    }
+
+    .mobile-menu ul li {
+        font-size: 22px;
+        padding: 15px;
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-menu .btn {
+        font-size: 18px;
+        padding: 12px 25px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 20px;
+    }
+
+    .carousel-caption p {
+        font-size: 16px;
+    }
+    body {
+        padding-top: 60px; /* Adjust based on your header's height */
+    } 
+
+}
+/* new css for responsive */
+
+
+/* General Card Styles */
+.card-song {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* auto-fill for better control */
+    gap: 16px;
+    justify-items: center; /* Center the cards in the grid */
+    padding: 15px 10px; /* Adds some padding on the sides */
+  }
+  
+  /* Mobile View */
+  @media screen and (max-width: 768px) {
+    .card-song {
+      grid-template-columns: repeat(2, 0fr); /* Two cards per row on mobile */
+      gap: 2px;
+      padding: 15px 20px; /* Adjusted padding for mobile */
+    }
+  
+    .card-back {
+      max-width: 100%;
+    }
+  }
+  
+  /* Mobile View Specific Styling for Images */
+  .card-back img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* HTML and Body styles for proper responsiveness */
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* Ensure the body stays within viewport */
+  body {
+    box-sizing: border-box; /* Makes sure padding doesn't cause overflow */
+    overflow-x: hidden; /* Hide any horizontal overflow */
+  }
+  
+  @media screen and (max-width: 370px) {
+    #recent {
+        font-size: 20px;
+        padding-left: 15px;
+    }
+    .footer-container{
+        padding: 50px 2rem;
+        gap: 20px;
+    }
+  }
