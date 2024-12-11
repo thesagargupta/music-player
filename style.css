@@ -795,7 +795,7 @@ body {
   /* Ensure the whole playbar is responsive and compact */
   .progress-container {
     flex-direction: column; /* Stack progress bar and time labels vertically */
-    width: 100%;
+    width: 60%;
     text-align: center;
   }
 
@@ -893,6 +893,10 @@ body {
       gap: 2px;
       padding: 15px 20px; /* Adjusted padding for mobile */
     }
+    .effect:hover{
+      transform: none;  /* Slightly enlarge the card */
+      box-shadow: none;  /* Add a shadow effect */
+  }
   
     .card-back {
       max-width: 100%;
@@ -933,5 +937,11 @@ body {
   .effect:hover{
     transform: none;  /* Slightly enlarge the card */
     box-shadow: none;  /* Add a shadow effect */
+}
+
+.progress-container {
+  flex-direction: column; /* Stack progress bar and time labels vertically */
+  width: 60%;
+  text-align: center;
 }
   }
