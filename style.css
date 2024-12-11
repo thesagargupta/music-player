@@ -57,7 +57,6 @@ body.dark-mode section {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    background-color: #007bff;
     color: white;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -935,3 +934,10 @@ body {
         gap: 20px;
     }
   }
+
+  @media (max-width: 768px) {
+    .effect:hover {
+      pointer-events: none; /* Disable hover behavior */
+    }
+  }
+  
