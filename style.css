@@ -936,12 +936,8 @@ body {
   }
 
   @media (max-width: 768px) {
-    .effect:hover {
-      pointer-events: none; /* Disable hover behavior */
-    }
     .hover:hover{
       pointer-events: none; /* Disable hover behavior */
-
     }
   }
   
