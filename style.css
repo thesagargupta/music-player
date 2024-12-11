@@ -939,5 +939,9 @@ body {
     .effect:hover {
       pointer-events: none; /* Disable hover behavior */
     }
+    .hover:hover{
+      pointer-events: none; /* Disable hover behavior */
+
+    }
   }
   
