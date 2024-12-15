@@ -584,24 +584,19 @@ footer {
     margin-top: 15px; /* Space above the button */
   }
   
-  /* Button Hover Effects */
   
-  /* Button Focus Effects */
   .crousel-btn:focus {
     outline: none;
   }
   
-  /* Button Disabled State */
   .crousel-btn:disabled {
     cursor: not-allowed;
   }
   
-  /* Button active effect */
   .crousel-btn:active {
-    transform: translateY(2px); /* Slight depression effect */
+    transform: translateY(2px); 
   }
   
-  /* Optional: Adding some space between carousel caption */
   .carousel-caption .crousel-cap {
     text-align: center;
     padding: 20px;
@@ -710,9 +705,8 @@ body {
   margin-left: 10px;
 }
 
-/* Updated style for Previous/Next buttons */
 .control-btn.prev, .control-btn.next {
-  font-size: 28px; /* Larger size for better visibility */
+  font-size: 28px; 
   padding: 10px;
   border-radius: 50%;
   background-color: #333;
@@ -720,7 +714,6 @@ body {
 
 
 
-/* Play/Pause button specific */
 .control-btn.play, .control-btn.pause {
   font-size: 36px; /* Larger play/pause button */
   padding: 12px;
@@ -754,13 +747,13 @@ body {
   .playbar-left {
     justify-content: flex-start;
     flex-direction: row;
-    gap: 10px; /* Adjust spacing between thumbnail and song details */
+    gap: 10px; 
   }
 
   .playbar-center {
-    gap: 15px; /* Reduce space between buttons */
-    flex: 1 1 100%; /* Controls take full width */
-    flex-wrap: wrap; /* Wrap the controls on smaller screens */
+    gap: 15px;
+    flex: 1 1 100%; 
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -816,11 +809,11 @@ body {
 /* Responsive styles for mobile */
 @media screen and (max-width: 768px) {
     .nav-items {
-        display: none; /* Hide navigation by default on mobile */
+        display: none; 
     }
 
     .hamburger {
-        display: flex; /* Show hamburger menu on small screens */
+        display: flex; 
     }
 
     .hamburger .bar {
@@ -870,25 +863,22 @@ body {
         font-size: 16px;
     }
     body {
-        padding-top: 60px; /* Adjust based on your header's height */
+        padding-top: 60px; 
     } 
 
 }
-/* new css for responsive */
 
-
-/* General Card Styles */
 .card-song {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* auto-fill for better control */
-    gap: 16px;
-    justify-items: center; /* Center the cards in the grid */
-    padding: 15px 10px; /* Adds some padding on the sides */
+    display: flex;
+    gap: 30px;
+    justify-items: center;
+    padding: 15px 10px;
   }
   
   /* Mobile View */
   @media screen and (max-width: 768px) {
     .card-song {
+      display: grid;
       grid-template-columns: repeat(2, 0fr); /* Two cards per row on mobile */
       gap: 2px;
       padding: 15px 20px; /* Adjusted padding for mobile */
