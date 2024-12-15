@@ -807,7 +807,7 @@ body {
 }
 
 /* Responsive styles for mobile */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1150px) {
     .nav-items {
         display: none; 
     }
@@ -935,3 +935,186 @@ body {
   text-align: center;
 }
   }
+
+.search-container{
+  font-family: 'Montserrat', sans-serif;
+
+}
+  .search-results {
+    position: absolute;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 14px;
+    color: #333;
+}
+
+.result-item:hover {
+    background-color: #f8f8f8;
+    color: #000;
+}
+
+/* For screen sizes <= 1150px */
+@media (max-width: 1150px) {
+  /* Center the search bar in navbar */
+  .search-container {
+      width: 50%; /* Adjust width to center the search bar */
+      justify-content: center; /* Ensure it is centered */
+      display: block;
+      margin: 0 auto; /* Ensure it's horizontally centered */
+  }
+
+  .nav-items ul {
+      display: none; /* Hide navbar items */
+  }
+
+  /* Show hamburger menu */
+  .hamburger {
+      display: flex;
+  }
+
+  /* Hide the dark mode toggle on smaller screens */
+  .dark-mode-toggle {
+      display: none;
+  }
+
+  /* Ensure mobile menu items are centered and styled properly */
+
+  .mobile-menu ul li {
+      margin-bottom: 20px;
+  }
+
+  /* Mobile Menu Link Styling */
+  .mobile-menu ul li a {
+      font-size: 18px;
+  }
+
+  /* Login Button Adjustment */
+  .mobile-menu button {
+      margin-top: 20px;
+  }
+
+  /* Search bar font size adjustment on smaller screens */
+  #search-bar {
+      font-size: 14px;
+  }
+}
+
+/* For smaller screens <= 768px */
+@media (max-width: 768px) {
+  .search-container {
+      width: 80%;
+      max-width: 200px;
+  }
+
+  #search-bar {
+      font-size: 14px;
+  }
+}
+
+
+
+
+
+
+/* =================================================================*/
+
+
+
+
+
+/* Navbar Container */
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Navbar List */
+.nav-items ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+/* Search Bar Container */
+.search-container {
+  display: block; /* Ensure the search bar is always visible */
+  position: relative;
+  width: 300px;
+  margin: 0 auto; /* Center the search bar */
+}
+
+#search-bar {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  background-color: #fff;
+}
+
+
+/* For screens smaller than 1150px */
+@media (max-width: 1150px) {
+  /* Keep search bar visible in the navbar */
+  .search-container {
+      display: block;
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .header .btn{
+    display: none;
+  }
+
+  /* Show hamburger menu */
+  .hamburger {
+      display: flex;
+  }
+
+  /* Hide navbar items (links and login) on small screens */
+  .nav-items ul {
+      display: none;
+  }
+
+  /* Ensure the mobile menu is hidden by default */
+  .mobile-menu {
+      display: none;
+  }
+}
+
+/* For mobile screens <= 768px */
+@media (max-width: 768px) {
+  .search-container {
+      width: 80%;  /* Adjust width for smaller screens */
+      margin: 0 auto;
+  }
+
+  #search-bar {
+      font-size: 14px;
+  }
+}
+
+/* Active class for mobile menu */
+.mobile-menu.active {
+  display: block;
+}
+
+/* Prevent body scroll when mobile menu is active */
+body.no-scroll {
+  overflow: hidden;
+}

@@ -1,4 +1,4 @@
-// Menu Toggle Functionality
+// === MENU TOGGLE FUNCTIONALITY ===
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeBtn = document.querySelector('.close-btn');
@@ -18,7 +18,7 @@ closeBtn.addEventListener('click', () => {
     hamburger.style.display = 'block';
 });
 
-// Close the mobile menu when a menu item is clicked
+// Close the menu when a menu item is clicked
 menuItems.forEach(item => {
     item.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
@@ -27,50 +27,38 @@ menuItems.forEach(item => {
     });
 });
 
-// Reset button visibility on page load for responsiveness
-window.addEventListener('load', () => {
-    if (window.innerWidth <= 768) {
+// Reset button visibility based on screen size
+function updateMenuButtons() {
+    if (window.innerWidth <= 1150) {
         hamburger.style.display = 'block';
         closeBtn.style.display = 'none';
     } else {
         hamburger.style.display = 'none';
         closeBtn.style.display = 'none';
     }
-});
+}
+window.addEventListener('load', updateMenuButtons);
+window.addEventListener('resize', updateMenuButtons);
 
-// Re-check visibility on window resize
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 768) {
-        hamburger.style.display = 'block';
-        closeBtn.style.display = 'none';
-    } else {
-        hamburger.style.display = 'none';
-        closeBtn.style.display = 'none';
-    }
-});
-
-// Dark Mode Functionality
+// === DARK MODE FUNCTIONALITY ===
 const toggleButton = document.getElementById('darkModeToggle');
 const toggleIcon = document.getElementById('toggle-icon');
 const body = document.body;
 
+// Toggle dark mode
 toggleButton.addEventListener('click', function () {
     body.classList.toggle('dark-mode');
 
-    // Switch the icon based on the mode
-    if (body.classList.contains('dark-mode')) {
-        toggleIcon.textContent = '🌞'; // Sun icon for light mode
-    } else {
-        toggleIcon.textContent = '🌙'; // Moon icon for dark mode
-    }
+    // Update the icon
+    toggleIcon.textContent = body.classList.contains('dark-mode') ? '🌞' : '🌙';
 });
 
-// Footer Year Display
+// === FOOTER YEAR DISPLAY ===
 const yearElement = document.querySelector(".footer-bottom p");
 const currentYear = new Date().getFullYear();
 yearElement.innerHTML = `&copy; ${currentYear} MusicoFile. All Rights Reserved.`;
 
-// Music Player Functionality
+// === MUSIC PLAYER FUNCTIONALITY ===
 const audioPlayer = document.getElementById('audio-player');
 const playPauseBtn = document.getElementById('play-pause-btn');
 const prevBtn = document.getElementById('prev-btn');
@@ -79,10 +67,14 @@ const progressBar = document.querySelector('.progress-bar');
 const currentTimeEl = document.querySelector('.current-time');
 const durationEl = document.querySelector('.duration');
 const volumeBar = document.querySelector('.volume-bar');
-const volumeIcon = document.querySelector('.volume-icon'); // Volume icon element
+const volumeIcon = document.querySelector('.volume-icon');
 const playbarThumbnail = document.querySelector('.playbar-left .song-thumbnail');
 const playbarTitle = document.querySelector('.playbar-left .song-title');
 const playbarArtist = document.querySelector('.playbar-left .artist-name');
+
+// === SEARCH FUNCTIONALITY ===
+const searchInput = document.getElementById('search-bar');
+const searchResults = document.querySelector('.search-results'); // Container for displaying search suggestions
 
 let currentSongIndex = 0;
 let songs = [];
@@ -93,8 +85,8 @@ songCards.forEach((card, index) => {
     songs.push({
         src: card.dataset.song,
         thumbnail: card.dataset.thumbnail,
-        title: card.dataset.title,
-        artist: card.dataset.artist,
+        title: card.dataset.title.toLowerCase(),
+        artist: card.dataset.artist.toLowerCase(),
     });
 
     // Play song when card is clicked
@@ -105,13 +97,88 @@ songCards.forEach((card, index) => {
     });
 });
 
+// Search Songs
+// === SEARCH FUNCTIONALITY WITH FILTERED PLAYLIST ===
+ // Container for displaying search suggestions
+let originalSongs = [...songs]; // Keep a backup of the full playlist
+let filteredSongs = []; // Temporary array for filtered search results
+
+// Search Songs
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    searchResults.innerHTML = ''; // Clear previous suggestions
+
+    if (query) {
+        // Filter songs by title or artist
+        filteredSongs = originalSongs.filter(song =>
+            song.title.includes(query) || song.artist.includes(query)
+        );
+
+        // Display suggestions
+        filteredSongs.forEach((song, index) => {
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('result-item');
+            resultItem.textContent = `${song.title.charAt(0).toUpperCase() + song.title.slice(1)} - ${song.artist}`;
+            resultItem.dataset.index = index; // Attach the filtered index
+
+            // Click event to play the song and update the playlist
+            resultItem.addEventListener('click', () => {
+                songs = filteredSongs; // Update the playlist to filtered songs
+                currentSongIndex = index; // Set the index of the clicked song
+                loadSong(currentSongIndex); // Load the selected song
+                playSong(); // Play the song
+
+                // Clear the search bar and results
+                searchInput.value = '';
+                searchResults.innerHTML = '';
+            });
+
+            searchResults.appendChild(resultItem);
+        });
+    } else {
+        // Reset to original playlist if search input is cleared
+        songs = originalSongs;
+    }
+});
+
+// === REMAINING FUNCTIONALITY (PLAY, NEXT, PREVIOUS, ETC.) REMAINS THE SAME ===
+
 // Load a song into the player
 function loadSong(index) {
     const song = songs[index];
     audioPlayer.src = song.src;
     playbarThumbnail.src = song.thumbnail;
-    playbarTitle.textContent = song.title;
-    playbarArtist.textContent = song.artist;
+    playbarTitle.textContent = song.title.charAt(0).toUpperCase() + song.title.slice(1);
+    playbarArtist.textContent = song.artist.charAt(0).toUpperCase() + song.artist.slice(1);
+}
+
+// Play the song
+function playSong() {
+    audioPlayer.play();
+    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+}
+
+// Play the next song in the filtered playlist
+nextBtn.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong(currentSongIndex);
+    playSong();
+});
+
+// Play the previous song in the filtered playlist
+prevBtn.addEventListener('click', () => {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong(currentSongIndex);
+    playSong();
+});
+
+// Load a song into the player
+function loadSong(index) {
+    const song = songs[index];
+    audioPlayer.src = song.src;
+    playbarThumbnail.src = song.thumbnail;
+    playbarTitle.textContent = song.title.charAt(0).toUpperCase() + song.title.slice(1);
+    playbarArtist.textContent = song.artist.charAt(0).toUpperCase() + song.artist.slice(1);
 }
 
 // Play the song
@@ -168,29 +235,29 @@ progressBar.addEventListener('input', () => {
 
 // Update volume
 volumeBar.addEventListener('input', () => {
-    const volume = volumeBar.value / 100; // Calculate volume from slider value
+    const volume = volumeBar.value / 100;
     audioPlayer.volume = volume;
 
-    // If volume is 0, mute the audio and update the icon
+    // Update the icon
     if (volume === 0) {
         audioPlayer.muted = true;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Mute icon
+        volumeIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
     } else {
         audioPlayer.muted = false;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>'; // Unmute icon
+        volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
     }
 });
 
-// Mute/Unmute functionality for volume icon
+// Mute/Unmute functionality
 volumeIcon.addEventListener('click', () => {
     if (audioPlayer.muted) {
-        audioPlayer.muted = false; // Unmute
-        volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>'; // Volume up icon
-        volumeBar.value = audioPlayer.volume * 100; // Update volume slider to current volume
+        audioPlayer.muted = false;
+        volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+        volumeBar.value = audioPlayer.volume * 100;
     } else {
-        audioPlayer.muted = true; // Mute
-        volumeIcon.innerHTML = '<i class="fas fa-volume-mute"></i>'; // Mute icon
-        volumeBar.value = 0; // Set slider to 0 when muted
+        audioPlayer.muted = true;
+        volumeIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        volumeBar.value = 0;
     }
 });
 
@@ -203,3 +270,4 @@ function formatTime(time) {
 
 // Load the first song on page load
 loadSong(currentSongIndex);
+
