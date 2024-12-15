@@ -1104,6 +1104,10 @@ body {
       margin: 0 auto;
   }
 
+  .header{
+    padding: 2px 10px;
+  }
+
   #search-bar {
       font-size: 14px;
   }
