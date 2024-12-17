@@ -41,6 +41,10 @@ body.dark-mode .header {
     background-color: #1e1e1e;  /* Dark mode background */
 }
 
+body.dark-mode .playbar {
+  background-color: #1e1e1e;  /* Dark mode background */
+}
+
 /* Section styling */
 section {
     transition: background-color 0.3s, color 0.3s;
@@ -649,7 +653,12 @@ body {
   justify-content: flex-start;
   margin-bottom: 10px; /* Space between the song details and controls */
 }
+.search-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 /* Center section for controls */
 .playbar-center {
   display: flex;
@@ -1009,6 +1018,7 @@ body {
   /* Search bar font size adjustment on smaller screens */
   #search-bar {
       font-size: 14px;
+
   }
 }
 
@@ -1021,6 +1031,7 @@ body {
 
   #search-bar {
       font-size: 14px;
+      padding-left: 7px;
   }
 }
 
@@ -1063,9 +1074,10 @@ body {
   padding: 10px;
   border: 2px solid #fff;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: 17px;
   outline: none;
   background-color: #fff;
+  padding-left: 20px
 }
 
 
@@ -1113,6 +1125,7 @@ body {
 
   #search-bar {
       font-size: 14px;
+      padding-left: 7px;
   }
 }
 
