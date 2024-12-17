@@ -811,7 +811,9 @@ body {
     .nav-items {
         display: none; 
     }
-
+.search-parent{
+  width: 100%;
+}
     .hamburger {
         display: flex; 
     }
@@ -1038,7 +1040,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+
 }
 
 /* Navbar List */
@@ -1072,7 +1074,7 @@ body {
   /* Keep search bar visible in the navbar */
   .search-container {
       display: block;
-      width: 250px;
+      width: 350px;
       margin-left: auto;
       margin-right: auto;
   }
@@ -1100,9 +1102,10 @@ body {
 /* For mobile screens <= 768px */
 @media (max-width: 768px) {
   .search-container {
-      width: 80%;  /* Adjust width for smaller screens */
+      width: 100%;  /* Adjust width for smaller screens */
       margin: 0 auto;
   }
+
 
   .header{
     padding: 2px 10px;
