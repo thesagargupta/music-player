@@ -248,18 +248,7 @@ volumeBar.addEventListener('input', () => {
     }
 });
 
-// Mute/Unmute functionality
-volumeIcon.addEventListener('click', () => {
-    if (audioPlayer.muted) {
-        audioPlayer.muted = false;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
-        volumeBar.value = audioPlayer.volume * 100;
-    } else {
-        audioPlayer.muted = true;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        volumeBar.value = 0;
-    }
-});
+
 
 // Format time
 function formatTime(time) {
@@ -271,3 +260,19 @@ function formatTime(time) {
 // Load the first song on page load
 loadSong(currentSongIndex);
 
+// Get elements
+const playbarContainer = document.querySelector('.playbar-container');
+const playbarToggle = document.getElementById('playbar-toggle');
+const toggleIcon2 = document.querySelector('.toggle-icon2');
+
+// Toggle Playbar visibility
+playbarToggle.addEventListener('click', () => {
+  playbarContainer.classList.toggle('active');
+
+  // Change the toggle icon
+  if (playbarContainer.classList.contains('active')) {
+    toggleIcon2.textContent = '▼'; // Icon for sliding down
+  } else {
+    toggleIcon2.textContent = '▲'; // Icon for sliding up
+  }
+});

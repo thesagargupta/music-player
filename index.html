@@ -1156,47 +1156,42 @@
       </div>
     </footer>
 
-    <div id="playbar">
-      <div class="playbar-left">
-        <img
-          src="default-thumbnail.jpg"
-          alt="Song Thumbnail"
-          class="song-thumbnail"
-        />
-        <div class="song-details">
-          <p class="song-title">Song Title</p>
-          <p class="artist-name">Artist Name</p>
+    <div class="playbar-container">
+      <div id="playbar-toggle" class="playbar-toggle">
+        <span class="toggle-icon2">▲</span> <!-- Icon changes based on toggle -->
+      </div>
+      <div id="playbar">
+        <div class="playbar-left">
+          <img src="morni.jpg" alt="Song Thumbnail" class="song-thumbnail" />
+          <div class="song-details">
+            <p class="song-title">Song Title</p>
+            <p class="artist-name">Artist Name</p>
+          </div>
+        </div>
+        <div class="playbar-center">
+          <button class="control-btn" id="prev-btn">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button class="control-btn" id="play-pause-btn">
+            <i class="fas fa-play"></i>
+          </button>
+          <button class="control-btn" id="next-btn">
+            <i class="fas fa-forward"></i>
+          </button>
+          <div class="progress-container">
+            <span class="current-time">0:00</span>
+            <input type="range" class="progress-bar" min="0" max="100" value="0" />
+            <span class="duration">0:00</span>
+          </div>
+        </div>
+        <div class="playbar-right">
+          <button class="control-btn"><i class="fas fa-volume-up"></i></button>
+          <input type="range" class="volume-bar" min="0" max="100" value="50" />
         </div>
       </div>
-      <div class="playbar-center">
-        <button class="control-btn" id="prev-btn">
-          <i class="fas fa-backward"></i>
-        </button>
-        <button class="control-btn" id="play-pause-btn">
-          <i class="fas fa-play"></i>
-        </button>
-        <button class="control-btn" id="next-btn">
-          <i class="fas fa-forward"></i>
-        </button>
-        <div class="progress-container">
-          <span class="current-time">0:00</span>
-          <input
-            type="range"
-            class="progress-bar"
-            min="0"
-            max="100"
-            value="0"
-          />
-          <span class="duration">0:00</span>
-        </div>
-      </div>
-      <div class="playbar-right">
-        <button class="control-btn"><i class="fas fa-volume-up"></i></button>
-        <input type="range" class="volume-bar" min="0" max="100" value="50" />
-      </div>
+      <audio id="audio-player"></audio>
     </div>
-    <audio id="audio-player"></audio>
-
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>

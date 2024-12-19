@@ -1147,3 +1147,52 @@ body.no-scroll {
   }
 
 }
+
+
+/* General Playbar Styles */
+#playbar {
+  background-color: #292929;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Playbar toggle button */
+.playbar-toggle {
+  background-color: #1e1e1e;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px 0;
+  font-size: 18px;
+  display: none; /* Hidden on larger screens */
+}
+
+/* Mobile-only styles */
+@media (max-width: 768px) {
+  .playbar-toggle {
+    display: block; /* Show toggle on mobile */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1001;
+  }
+
+  #playbar {
+    position: fixed;
+    bottom: -150px; /* Hidden below the screen */
+    width: 100%;
+    z-index: 1000;
+    transition: bottom 0.4s ease; /* Smooth slide animation */
+  }
+
+  /* Show Playbar when active */
+  .playbar-container.active #playbar {
+    bottom: 50px; /* Visible just above the toggle button */
+  }
+}
+
+
