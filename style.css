@@ -899,6 +899,10 @@ body {
       box-shadow: none;  /* Add a shadow effect */
   }
   
+  .name{
+    font-size: 16px;
+  }
+
     .card-back {
       max-width: 100%;
     }
@@ -1194,5 +1198,15 @@ body.no-scroll {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 390px) {
+  #playbar {
+      position: fixed;
+      bottom: -110px;
+      width: 100%;
+      z-index: 1000;
+      transition: bottom 0.4s ease;
   }
 }
