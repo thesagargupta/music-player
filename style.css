@@ -1193,6 +1193,26 @@ body.no-scroll {
   .playbar-container.active #playbar {
     bottom: 50px; /* Visible just above the toggle button */
   }
+  body {
+    padding-bottom: 50px;
+}
+}
+
+
+/* Playing state styles */
+.song-thumbnail.playing {
+  animation: spin 5s linear infinite;
+  border: 2px solid #4caf50; /* Green border to indicate playing */
+  box-shadow: 0 0 10px #4caf50;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 

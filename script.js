@@ -276,3 +276,35 @@ playbarToggle.addEventListener('click', () => {
     toggleIcon2.textContent = '▲'; // Icon for sliding up
   }
 });
+
+
+// Get elements
+const songThumbnail = document.querySelector('.song-thumbnail');
+
+// Play the song
+function playSong() {
+  audioPlayer.play();
+  playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  playPauseBtn.classList.add('playing'); // Add playing style to button
+  songThumbnail.classList.add('playing'); // Add animation to thumbnail
+}
+
+
+
+const songTitle = document.querySelector('.song-title');
+
+function playSong() {
+  audioPlayer.play();
+  playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  playPauseBtn.classList.add('playing');
+  songThumbnail.classList.add('playing');
+  songTitle.textContent = `Playing: ${songs[currentSongIndex].title}`; // Update title
+}
+
+function pauseSong() {
+  audioPlayer.pause();
+  playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+  playPauseBtn.classList.remove('playing');
+  songThumbnail.classList.remove('playing');
+  songTitle.textContent = songs[currentSongIndex].title; // Reset title
+}
