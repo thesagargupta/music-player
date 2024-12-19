@@ -1147,8 +1147,6 @@ body.no-scroll {
   }
 
 }
-
-
 /* General Playbar Styles */
 #playbar {
   background-color: #292929;
@@ -1166,7 +1164,7 @@ body.no-scroll {
   color: white;
   text-align: center;
   cursor: pointer;
-  padding: 10px 0;
+  padding: 15px 0;
   font-size: 18px;
   display: none; /* Hidden on larger screens */
 }
@@ -1191,7 +1189,7 @@ body.no-scroll {
 
   /* Show Playbar when active */
   .playbar-container.active #playbar {
-    bottom: 50px; /* Visible just above the toggle button */
+    bottom: 60px; /* Visible just above the toggle button */
   }
   body {
     padding-bottom: 50px;
