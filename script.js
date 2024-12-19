@@ -67,7 +67,7 @@ const progressBar = document.querySelector('.progress-bar');
 const currentTimeEl = document.querySelector('.current-time');
 const durationEl = document.querySelector('.duration');
 const volumeBar = document.querySelector('.volume-bar');
-const volumeIcon = document.querySelector('.volume-icon');
+
 const playbarThumbnail = document.querySelector('.playbar-left .song-thumbnail');
 const playbarTitle = document.querySelector('.playbar-left .song-title');
 const playbarArtist = document.querySelector('.playbar-left .artist-name');
@@ -233,21 +233,41 @@ progressBar.addEventListener('input', () => {
     audioPlayer.currentTime = seekTime;
 });
 
+
+const volumeIcon = document.querySelector('.playbar-right .control-btn i'); // Specifically target the volume icon
+
 // Update volume
 volumeBar.addEventListener('input', () => {
     const volume = volumeBar.value / 100;
     audioPlayer.volume = volume;
 
-    // Update the icon
+    // Update the icon based on volume
     if (volume === 0) {
-        audioPlayer.muted = true;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        volumeIcon.className = 'fas fa-volume-mute'; // Mute icon
+    } else if (volume > 0 && volume <= 0.5) {
+        volumeIcon.className = 'fas fa-volume-down'; // Low volume icon
     } else {
-        audioPlayer.muted = false;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-up"></i>';
+        volumeIcon.className = 'fas fa-volume-up'; // High volume icon
     }
 });
 
+// Toggle mute/unmute on volume icon click
+volumeIcon.parentElement.addEventListener('click', () => {
+    audioPlayer.muted = !audioPlayer.muted;
+
+    if (audioPlayer.muted) {
+        volumeIcon.className = 'fas fa-volume-mute'; // Mute icon
+        volumeBar.value = 0; // Sync slider to muted state
+    } else {
+        volumeBar.value = audioPlayer.volume * 100; // Sync slider with current volume
+        // Update the icon based on the current volume
+        if (audioPlayer.volume > 0 && audioPlayer.volume <= 0.5) {
+            volumeIcon.className = 'fas fa-volume-down'; // Low volume icon
+        } else {
+            volumeIcon.className = 'fas fa-volume-up'; // High volume icon
+        }
+    }
+});
 
 
 // Format time
