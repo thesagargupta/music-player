@@ -1035,17 +1035,6 @@ body {
   }
 }
 
-
-
-
-
-
-/* =================================================================*/
-
-
-
-
-
 /* Navbar Container */
 .nav-items {
   display: flex;
@@ -1141,12 +1130,7 @@ body.no-scroll {
   overflow: hidden;
 }
 
-@media (max-width: 390px){
-  body {
-    zoom: 0.92; /* 75% */
-  }
 
-}
 /* General Playbar Styles */
 #playbar {
   background-color: #292929;
@@ -1181,7 +1165,7 @@ body.no-scroll {
 
   #playbar {
     position: fixed;
-    bottom: -150px; /* Hidden below the screen */
+    bottom: -60px; /* Hidden below the screen */
     width: 100%;
     z-index: 1000;
     transition: bottom 0.4s ease; /* Smooth slide animation */
